@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="danger shade">
+    <ion-title style="font-weight: bold; text-transform: capitalize">Pokemon Wiki - {{pokemon.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center margin-top>
+  <h4 style="font-weight: bolder">Ficha Técnica</h4>
+  
+  <div text-center>
+      <img [src]="pokemon.sprites.front_default"/>
+  </div>
+
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-6 margin-top>
+        <span ion-text text-left><strong>Nome</strong><br>
+          <span style="text-transform: capitalize">{{pokemon.name}}</span>
+        </span>
+      </ion-col>
+
+      <ion-col col-6 margin-top>
+        <span ion-text text-left><strong>Altura</strong><br>
+          {{pokemon.height}} m</span>
+      </ion-col>
+
+      <ion-col col-6 margin-top>
+        <span ion-text text-left><strong>Peso</strong><br>
+          {{pokemon.weight}} kg</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h5 style="font-weight: bolder">Habilidades</h5>
+  <div margin-top>
+    <span *ngFor="let abilities of pokemon.abilities" style="text-transform: capitalize">
+      {{abilities.ability.name}}<br>
+    </span>
+  </div>
+</ion-content>
+
+<ion-footer text-center no-border> 
+  <ion-toolbar>
+    <ion-button (click)="shareContent()" color="success shade">Compartilhar</ion-button>
+  </ion-toolbar>
+</ion-footer>

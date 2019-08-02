@@ -1,14 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+  <ion-toolbar color="danger shade">
+    <ion-title style="font-weight: bold">
+      Pokemon Wiki
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content margin-top>
+  <div class="ion-padding" text-center>
+    <span>Tipos de Pokemons</span><br>
+    <span style="font-size: 0.8em">(Clique nos itens para detalhes.)</span><br>
+    <ion-item *ngFor="let type of types_list" href tappable (click)="pokemonsDetail(type)">
+      <ion-label style="text-transform: capitalize">
+        {{type.name}}
+      </ion-label>
+    </ion-item>
   </div>
 </ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="danger shade">
+    <ion-title style="font-weight: bold; text-transform: capitalize">Pokemon Wiki - {{pokemon_type}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <span>Pokemons do tipo: <span style="text-transform: capitalize">{{pokemon_type}}</span></span><br>
+  <span style="font-size: 0.8em">(Clique nos itens para detalhes.)</span><br>
+  <ion-item *ngFor="let pokemon of pokemons_from_type" href tappable (click)="pokemonDetail(pokemon.pokemon)">
+    <ion-label style="text-transform: capitalize">
+      {{pokemon.pokemon.name}}
+    </ion-label>
+  </ion-item>
+</ion-content>
