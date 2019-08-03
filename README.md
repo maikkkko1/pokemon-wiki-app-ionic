@@ -27,7 +27,7 @@ Clicando sobre o pokemon, uma janela com o avatar, nome, altura, peso e habilida
 
 Primeiramente clone o repositório:
 ```
-git clone git@github.com:maikkkko1/pokemon-wiki-app-ionic.git
+git clone https://github.com/maikkkko1/pokemon-wiki-app-ionic.git
 ```
 
 Pelo terminal acesse o repositório que foi clonado e digite (necessário possuir o node 12.7 instalado):
